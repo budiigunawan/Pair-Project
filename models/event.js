@@ -3,7 +3,9 @@ module.exports = (sequelize, DataTypes) => {
   const Sequelize = sequelize.Sequelize;
   const Model = Sequelize.Model;
 
-  class Event extends Model {}
+  class Event extends Model {
+
+  }
 
   Event.init({
     event_name: DataTypes.STRING,
