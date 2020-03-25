@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/bootstrap')%>
+    <title>User Edit</title>
+</head>
+
+<body>
+    <h3>Edit Profile</h3>
+    <form action="./<%=data.id%>" method="POST">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" value="<%= data.username%>">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" value="<%= data.password%>">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" value="<%= data.email%>">
+        </div>
+        <!-- <div class="form-group">
+            <label for="role">Role</label>
+            <input type="text" class="form-control" name="role" value="<%= data.role%>">
+        </div> -->
+        <div class="form-group">
+            <label for="role">Role</label>
+            <select class="form-control" name="role">
+                <option value="Event Organizer" <%= data.role === 'Event Organizer' ? 'selected' : '' %>>Event Organizer</option>
+                <option value="User" <%= data.role === 'User' ? 'selected' : '' %>>User</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a href="./" class="btn btn-secondary active" role="button" aria-pressed="true">Cancel</a>
+    </form>
+</body>
+
+</html>
