@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   },{sequelize});
 
   User.associate = function(models) {
-    User.belongsToMany(models.User_Event, {through: models.User_Event})
+    User.belongsToMany(models.Event, {through: models.User_Event})
     User.hasMany(models.User_Event)
   };
   return User;

@@ -16,10 +16,19 @@
     <h1><%=data.event_name%></h1>
 
 
-    <h4><%=data.event_date%></h4>
-
+    <h6><%=`${data.event_date.toDateString()} ${data.formatAMPM()}`%></h6>
+    <!-- data.event_date -->
 
     <p><%=data.description%></p>
+
+
+    <%if(user.role == 'User'){%>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a href=<%=`/events/${data.id}/info/add`%>><button type="button" class="btn btn-secondary">Add to Watch List</button></a>
+          </div>
+    <%}%>
+
+
 
 </body>
 

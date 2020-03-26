@@ -22,7 +22,15 @@ module.exports = (sequelize, DataTypes) => {
     event_name: DataTypes.STRING,
     event_date: DataTypes.DATE,
     description: DataTypes.STRING(1234)
-  },{sequelize});
+  },{sequelize,
+    hooks: {
+      beforeCreate:(model,option)=>{
+        let name = model.event_name
+        name = name.charAt(0).toUpperCase() + name.slice(1)
+        model.event_name = name
+      }
+    }
+});
 
   Event.associate = function(models) {
     Event.belongsToMany(models.User, {through: models.User_Event})

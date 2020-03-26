@@ -2,33 +2,32 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include('partials/bootstrap') %>
     <title>Event App</title>
 </head>
 
 <body>
     <%- include('partials/navbar') %>
+    
+    <div>
+        <div class="col-md-6">
+            <h1>Add Edvent</h1>
+        </div>
+        <div class="col-md-5">
+                <form action="/events/add" method="post">
+                    <label for="name">Event Name:</label><br>
+                    <input type="text" class="form-control" name="name"><br>
+        
+                    <label for="time">Event Time & Date:</label><br>
+                    <input type="datetime-local" class="form-control" name="time"><br>
+        
+                    <label for="desc">Description:</label><br>
+                    <textarea name="desc" rows="4" cols="50" class="form-control">Enter Description Here</textarea><br>
+                    <button type="sumbit" class="btn btn-primary">Add Event</button>
+                </form>
+        </div>
+    </div>
 
-
-
-    <h1>Add Event</h1>
-
-
-
-
-    <form action="/events/add" method="post">
-        <label for="name">Event Name:</label><br>
-        <input type="text" name="name"><br>
-
-        <label for="time">Event Time & Date:</label><br>
-        <input type="datetime-local" name="time"><br>
-
-        <label for="desc">Description:</label><br>
-        <textarea name="desc" rows="4" cols="50">Enter Description Here</textarea><br>
-        <button type="sumbit">Add</button>
-    </form>
 
 </body>
 

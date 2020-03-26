@@ -1,0 +1,41 @@
+    
+
+
+
+        <nav class="navbar navbar-light bg-light">
+            <h6>Here are the Edvents in your watch list</h6>
+            <a href="/users/settings"><button type="button" class="btn btn-info">Account Setting</button></a>
+        </nav>
+        
+        
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Event</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Details</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% for (let i in data.Events){%>
+                  <tr>
+                        <td><%=data.Events[i].event_name%></td>
+                        <td><%= `${data.Events[i].event_date.toDateString()} ${data.Events[i].formatAMPM()}`%></td>
+
+                        <td><div class="btn-group" role="group" aria-label="Basic example">
+                            <a href=<%=`/events/${data.Events[i].id}/info`%>><button type="button" class="btn btn-secondary">Info</button></a>
+                          </div>
+                        </td>
+
+                        <td><div class="btn-group" role="group" aria-label="Basic example">
+                            <a href=<%=`/users/${data.Events[i].id}/remove`%>><button type="button" class="btn btn-secondary">Remove from Watch List</button></a>
+                          </div>
+                        </td>
+                  </tr>
+                  <%}%>
+                </tbody>
+              </table>
+            
+
+

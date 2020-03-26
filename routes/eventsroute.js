@@ -14,4 +14,5 @@ route.get('/:id/edit',controller.editform)
 route.post('/:id/edit',controller.editpost)
 
 route.get('/:id/info',controller.info)
+route.get('/:id/info/add',controller.addToUser)
 module.exports = route

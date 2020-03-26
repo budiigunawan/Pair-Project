@@ -1,6 +1,6 @@
 var nodemailer = require('nodemailer');
 
-function mail(receiver,message) {
+function mail(receiver) {
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -13,7 +13,7 @@ function mail(receiver,message) {
         from: 'pairproject41@gmail.com',
         to: receiver,
         subject: 'Subject Email',
-        text: message
+        text: 'Halo....terima kasih sudah bergabung di Edvent.'
     };
     
     transporter.sendMail(mailOptions, (err, info) => {
