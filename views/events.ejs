@@ -2,56 +2,60 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- include('partials/bootstrap') %>
-    <title>MOVIE APP</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include('partials/bootstrap') %>
+  <title>MOVIE APP</title>
 </head>
 
 <body>
-    <%- include('partials/navbar') %>
-    <h2>EVENT LISTINGS</h2>
+  <%- include('partials/navbar') %>
+  <h2>EVENT LISTINGS</h2>
+
+  <nav class="navbar navbar-light bg-light">
+    <a href="/events/add"><button type="button" class="btn btn-info">Add an Event</button></a>
+    <div class="search-container">
+      <form action="/events/" method="GET">
+        <input type="text" placeholder="Search event" name="event_name">
+        <button type="submit" class="btn btn-outline-info">Search</button>
+      </form>
+    </div>
+  </nav>
 
 
-        <nav class="navbar navbar-light bg-light">
-            <a href="/events/add"><button type="button" class="btn btn-info">Add an Event</button></a>
-          </nav>
-        
-        
-            <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">Event</th>
-                    <th scope="col">Time</th>
-                    <th scope="col">Details</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    <% for (let i in data){%>
-                  <tr>
-                        <td><%=data[i].event_name%></td>
-                        <td><%=data[i].event_date%></td>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Event</th>
+        <th scope="col">Time</th>
+        <th scope="col">Details</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (let i in data){%>
+      <tr>
+        <td><%=data[i].event_name%></td>
+        <td><%=`${data[i].event_date.toDateString()} ${data[i].formatAMPM()}`%></td>
 
-                        <td><div class="btn-group" role="group" aria-label="Basic example">
-                            <a href=<%=`/events/${data[i].id}/info`%>><button type="button" class="btn btn-secondary">Info</button></a>
-                          </div>
-                        </td>
+        <td>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <a href=<%=`/events/${data[i].id}/info`%>><button type="button" class="btn btn-secondary">Info</button></a>
+          </div>
+        </td>
 
-                        <td><div class="btn-group" role="group" aria-label="Basic example">
-                            <a href=<%=`/events/${data[i].id}/edit`%>><button type="button" class="btn btn-secondary">Edit</button></a> &nbsp;
-                            <a href=<%=`/events/${data[i].id}/delete`%>><button type="button" class="btn btn-secondary" onclick="return confirm('Are you sure?')">Delete</button></a> &nbsp;
-                          </div>
-                        </td>
-                  </tr>
-                  <%}%>
-                </tbody>
-              </table>
+        <td>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <a href=<%=`/events/${data[i].id}/edit`%>><button type="button" class="btn btn-secondary">Edit</button></a>
+            &nbsp;
+            <a href=<%=`/events/${data[i].id}/delete`%>><button type="button" class="btn btn-secondary"
+                onclick="return confirm('Are you sure?')">Delete</button></a> &nbsp;
+          </div>
+        </td>
+      </tr>
+      <%}%>
+    </tbody>
+  </table>
             
-
-
-
-
-
 </body>
 </html>

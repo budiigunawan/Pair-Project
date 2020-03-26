@@ -6,6 +6,8 @@ route.get('/',controller.list)
 route.get('/add',controller.addform)
 route.post('/add',controller.addpost)
 
+route.get('/search',controller.search)
+
 route.get('/:id/delete',controller.delete)
 
 route.get('/:id/edit',controller.editform)

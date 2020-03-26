@@ -1,11 +1,17 @@
 const {Event,User, User_Event} = require('../models')
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op
 
 class EventCtrl{
 
     static list(req,res){
         Event.findAll({})
         .then(data=>{
-            res.render('events.ejs', {data})
+            if (req.query.event_name) {
+                EventCtrl.search(req,res)
+            } else {
+                res.render('events.ejs', {data})
+            }
         })
         .catch(err=>{
             res.send(err)
@@ -74,7 +80,21 @@ class EventCtrl{
         })
     }
 
-
+    static search(req,res) {
+        Event.findAll({
+            where: {
+                event_name: {
+                  [Op.like]: `%${req.query.event_name}%`
+                }
+              }
+        })
+        .then(data=>{
+            res.render('events.ejs', {data})
+        })
+        .catch(err=>{
+            res.send(err)
+        })
+    }
 
 }
 

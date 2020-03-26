@@ -1,0 +1,46 @@
+test, halo?
+haloo
+kamu bisa akses file2 di folder lain bi?
+bisa
+tadi aku request bisa write terminal
+kalau ku jalankan app.js kira2 jalan di aku atau lu ya?
+
+di lu doang kayanya bi
+coba jalanin nodemon
+
+masih ga bisa, tadi requestnya udah dapat?
+kalo sekarang gimana? oke udah bisa yaa
+terminalnya jalan, cuma web ga kebuka
+di laptopku kebuka bi
+
+kayakyna cuma lu yg bisa ngeliat
+iya...mungkin lu bisa ngerjain dulu di window lain nanti baru copy kesini?
+boleh, tapi aku pindah dulu ke desktop ku, laptopku ga kuat untuk 2 vscode
+oke siaap. Pembagian tugasnya gimana enaknya? kalo untuk sign up udah ada formnya sih di add user 
+oh jadi cuma log in aja ya?
+terus sign up di redirect ke add user?
+iya diredirect aja, lu jadi nonton lecture kemarin? tak rapihkan dulu formnya kalo gitu
+iya. aku exit dulu ya, switch ke desktop
+
+test?
+
+ini pake css 
+engga...tadi browsing2 aja
+jadi front end kita pake bootstrap?
+menrurutmu gimana bi?
+yg gampang sih kayaknya gitu
+oke...pake bootstrap aja
+
+lagi ngerjain apa bi? aku bingung wkwk
+bingung di mana?
+bingung mau ngerjain apa, form login sama sign up udah aku rapihin. Kamu lagi apa? liat lecture kemarin?
+iya, sama masih ne troubleshooting biar yg di clone tadi bs jalan di computer
+
+yg penting kayaknya sekarang session sama gabungin biar user bisa add event yg di setor di userevent
+oke siaap. Perlu di push ke github ga?
+apa aja yg udah di ganti?
+baru home ejs sama userform.ejs
+
+boleh deh
+aku nge hash kan user password ya, skalian ikutin lecture
+oke siap...aku tak cari2 tentang nodemailer
