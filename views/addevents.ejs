@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/bootstrap') %>
+    <title>Event App</title>
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+
+
+
+    <h1>Add Event</h1>
+
+
+
+
+    <form action="/events/add" method="post">
+        <label for="name">Event Name:</label><br>
+        <input type="text" name="name"><br>
+
+        <label for="time">Event Time & Date:</label><br>
+        <input type="datetime-local" name="time"><br>
+
+        <label for="desc">Description:</label><br>
+        <textarea name="desc" rows="4" cols="50">Enter Description Here</textarea><br>
+        <button type="sumbit">Add</button>
+    </form>
+
+</body>
+
+</html>
