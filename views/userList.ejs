@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/bootstrap')%>
+    <title>User</title>
+</head>
+
+<body>
+    <%- include('partials/navbar')%>
+    <h3>User List</h3>
+    <a href="/users/sign-up" class="btn btn-info">Add User</a>
+    <table class="table" style="margin: 16px 0px;">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">username</th>
+                <th scope="col">password</th>
+                <th scope="col">email</th>
+                <th scope="col">role</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%if (data.length > 0) {%>
+                <%for (let i = 0; i < data.length; i++) {%>
+                <tr>
+                    <td><%= data[i].username%></td>
+                    <td><%= data[i].password%></td>
+                    <td><%= data[i].email%></td>
+                    <td><%= data[i].role%></td>
+                    <td>
+                        <a href="users/edit/<%=data[i].id%>" class="btn btn-info">Edit</a> 
+                        <a href="users/delete/<%=data[i].id%>" class="btn btn-info">Delete</a>
+                    </td>
+                </tr>
+                <%}%>
+            <%}%>
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/bootstrap')%>
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <h3>Sign Up</h3>
+    <form action="./sign-up" method="POST">
+        <div class="form-group">
+            <label for="username">User Name</label>
+            <input type="text" class="form-control" name="username" placeholder="your username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="your password">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="your@mail.com">
+        </div>
+        <!-- <div class="form-group">
+            <label for="role">Role</label>
+            <input type="role" class="form-control" name="role" placeholder="e.g. : event organizer">
+        </div> -->
+        <div class="form-group">
+            <label for="genre">Role</label>
+            <select class="form-control" name="role">
+                <option value="Event Organizer">Event Organizer</option>
+                <option value="User">User</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a href="./" class="btn btn-secondary active" role="button" aria-pressed="true">Cancel</a>
+    </form>
+</body>
+
+</html>
